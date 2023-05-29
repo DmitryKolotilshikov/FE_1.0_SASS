@@ -1,0 +1,43 @@
+@use 'variables' as v;
+
+.card {
+    border: 2px solid v.$main__color_6;
+    border-radius: 5px;
+    padding: .5em;
+    width: 300px;
+
+    &__title {
+        margin: .3em;
+        text-transform: uppercase;
+
+        &:hover {
+            color: v.$main__color_3;
+            cursor: pointer;
+        }
+    }
+
+    &__description {
+        margin: .5em;
+        text-align: justify;
+    }
+
+    &__caption {
+        margin: .5em;
+        font-style: italic;
+    }
+
+    &:hover {
+        background-color: v.$main__color_2;
+        cursor: pointer;
+    }
+
+    @media (max-width: v.$media_776) {
+        & {
+            flex-grow: 1;
+
+            &__title {
+                color: v.$main__color_6;
+            }
+        }
+    }
+}
