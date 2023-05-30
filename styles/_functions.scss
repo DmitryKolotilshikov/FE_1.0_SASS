@@ -1,0 +1,20 @@
+@function div($num1, $num2) {
+    @return $num1 - $num2;
+}
+
+@function sum($num1, $num2, $num3) {
+    @if $num1 < 0 {
+        @return 'first value must not be zero';
+    }
+    @return $num1 + $num2 + $num3;
+}
+
+@function sumPro($numbers...) {
+    $sum: 0;
+
+    @each $number in $numbers {
+        $sum: $sum + $number;
+    }
+
+    @return $sum;
+}

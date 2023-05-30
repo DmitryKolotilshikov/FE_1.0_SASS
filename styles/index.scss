@@ -1,4 +1,8 @@
+@use 'placeholders';
 @use 'importer' as s;
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:color';
 
 body {
     background-color: s.$main__color_1;
@@ -17,13 +21,57 @@ body {
     }
 
     .cards-wrapper {
-        width: 100%;
-        height: 100%;
+        @extend %fullsize;
+        // width: 100%;
+        // height: 100%;
 
         // display: flex;
         // justify-content: center;
         // align-items: center;
         // flex-wrap: wrap;
         @include s.d-flex(center, center, wrap);
+    }
+}
+
+.block {
+    @include s.position(relative, top, left, 10);
+    width: s.div(500px, 200px);
+    height: 200px;
+    background-color: s.$main__color_3;
+
+    &:before {
+        display: block;
+        content: "#{s.sumPro(1, 2, 5, 99, 103, 4352, 1000, 99999)}";
+        color: #fff;
+    }
+    &:after {
+        content: "#{s.sum(-1, 2, 5)}";
+        color: #fff;
+    }
+}
+
+.built-in-modules {
+    @extend %simpleBLock;
+
+    // background-color: s.$main__color_4;
+    // background-color: #{color.invert(s.$main__color_4)};
+    // background-color: #{color.mix(s.$main__color_4, s.$main__color_6, 70%)};
+    background-color: #{color.adjust(s.$main__color_6, $red: 15, $green: 30, $blue: 70, $alpha: -0.7)};
+
+    &:before {
+        // content: "#{math.$max-number}";
+        // content: "#{math.$pi}";
+        // content: "#{math.ceil(4.7)}";
+        // content: "#{math.floor(4.7)}";
+        // content: "#{math.max(4, 10, 1, 23, 12)}";
+        // content: "#{math.pow(4, 2)}";
+        content: "#{math.sqrt(16)}";
+    }
+    &:after {
+        display: block;
+        // content: "#{string.unique-id()}";
+        // content: "#{string.to-lower-case('CoMPUtoR')}";
+        // content: "#{string.to-upper-case('CoMPUtoR')}";
+        content: "#{string.length('CoMPUtoR')}";
     }
 }

@@ -4,3 +4,10 @@
     align-items: $align;
     flex-wrap: $wrap;
 }
+
+@mixin position($name, $top-or-bottom, $left-or-right, $z-index: 1) {
+    position: $name;
+    #{$top-or-bottom}: 0;
+    #{$left-or-right}: 0;
+    z-index: $z-index;
+}
