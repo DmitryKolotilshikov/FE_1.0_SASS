@@ -1,0 +1,27 @@
+{
+  "name": "sass | scss",
+  "version": "1.0.0",
+  "description": "Здесь рассматриваем возможности SASS и способы компиляции SASS/SCSS в CSS. Также делаем необходимые настройки и конфигурации",
+  "source": "index.html",
+  "scripts": {
+    "start": "sass --style=compressed --watch styles:public",
+    "help": "sass --help",
+    "serve": "parcel serve --dist-dir output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryKolotilshikov/FE_1.0_SASS.git"
+  },
+  "keywords": ["sass", "scss", "parcel", "html", "css"],
+  "author": "Dmitry Ko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryKolotilshikov/FE_1.0_SASS/issues"
+  },
+  "homepage": "https://github.com/DmitryKolotilshikov/FE_1.0_SASS#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.1",
+    "parcel": "^2.9.1",
+    "sass": "^1.62.1"
+  }
+}
